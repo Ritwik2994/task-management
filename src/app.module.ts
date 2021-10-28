@@ -4,6 +4,9 @@ import { UserModule } from './module/user/user.module';
 import { config } from './config/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { DatabaseConfig } from './config/database.config';
+import { ExamtypeModule } from './module/examtype/examtype.module';
+import { ExamModule } from './module/exam/exam.module';
+import { QuestionModule } from './module/question/question.module';
 
 @Module({
   imports: [
@@ -16,7 +19,11 @@ import { DatabaseConfig } from './config/database.config';
       useClass: DatabaseConfig,
     }),
     UserModule,
+    ExamtypeModule,
+    ExamModule,
+    QuestionModule,
   ],
   providers: [],
+  controllers: [],
 })
 export class AppModule {}
